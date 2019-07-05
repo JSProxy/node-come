@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>pget接口</p>
+    <form action="/get_from" method='get'>
+        <div>
+                姓名:<input type="text" name='name'>
+        </div>
+        <div>
+                年龄:<input type="text" name="age">
+        </div> 
+        <input type="submit" value='提交'>
+    </form>
+    <p>post接口</p>
+    <form action="/post_from" method='post'>
+        <div>
+                姓名:<input type="text" name='name'>
+        </div>
+        <div>
+                年龄:<input type="text" name="age">
+        </div> 
+        <input type="submit" value='提交'>
+    </form>
+    <p>上传文件</p>
+    <form action="/up_load" method='post' enctype="multipart/form-data">
+        <input type="file" name="image" size="50">
+        <!-- <div>
+                姓名:<input type="text" name='name'>
+        </div>
+        <div>
+                年龄:<input type="text" name="age">
+        </div>  -->
+        <input type="submit" value='提交'>
+    </form>
+</body>
+</html>
