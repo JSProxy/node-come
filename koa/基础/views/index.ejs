@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <% include ../public/header.ejs%>
+    <h1><%= name%></h1>
+    <h1>ejs render</h1>
+    <div><%=title%></div>
+    <div><%- html %></div>
+    <ul>
+        <% for(var i=0; i<list.length;i++) {%>
+                <li><%=list[i]%></li>
+        <%}%>
+    </ul>
+    <% if(num<10){%>
+    <div>小于10</div>
+    <%}else{%>
+    <div>大于10</div>
+    <%}%>
+    
+</body>
+</html>

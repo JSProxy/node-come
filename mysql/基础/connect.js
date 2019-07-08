@@ -12,11 +12,21 @@ MySqlObj.connect((error)=>{
         console.log('连接数据库成功')
     }
 });
+//判断表是否存在
+let hasFrom = `SELECT table_name FROM information_schema.TABLES WHERE table_name ='card'`
+//student 是否存在
+let isHasFrom = `select * from information_schema.tables where table_name ='student'`
+//如果表不存在就建立 
+let isCreateTable = `create table if not exists tablename`
+//重模板创建
+let isCreateTableTemp = `create table if not exists like old_table_name`
+//如果存在就删除
+let droptable= `drop table if exists student`
 //创建数据库
 let createDataBase = `CREATE DATABASE test`;
-
 //创建表
 let createTable = `Create Table websites (id VARCHAR(20), name VARCHAR(20),url VARCHAR(256), alexa VARCHAR(20), country VARCHAR(20) )`
+
 // //查某张表
 let sql = `SELECT * FROM websites LIMIT 5`; //5条数据
 let sql = `SELECT name, url FROM websites`;//查询某一些列
@@ -53,6 +63,8 @@ MySqlObj.query(addSql,addSqlParams,(error,results,fields)=>{
         }
     })
 })
+
+
 // MySqlObj.end((error)=>{
 //     if(error){
 
