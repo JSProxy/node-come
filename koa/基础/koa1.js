@@ -39,6 +39,8 @@ router.get('/news',async (ctx)=> {
     // 请求信息 中也可以获取参数
     ctx.request
     ctx.body = 'news'
+
+    // ctx.redirect('/') 重定向
 })
 
 //动态路由

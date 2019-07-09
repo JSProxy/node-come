@@ -18,8 +18,11 @@ app.use(views('views', {
 
 
 router.get('/', async (ctx)=>{
+    // 设置中文 获取不到 需要先转base64
+    let zh_cn = new Buffer('张峰').toString('base64'); //转换成base64
+    
     ctx.cookies.set('userInfo','token',{
-        maxAge:1000*60, //60秒过期
+        maxAge:1000*60*60*24, //60秒过期
         httpOnly:true, //只有服务器可以反问
         expires:'2020-12-1',
         path:'/news', //配置可以反问的路径
@@ -37,6 +40,9 @@ router.get('/', async (ctx)=>{
     });
 })
 router.get('/news', async (ctx)=>{
+
+    // 获取中文cookie
+    let data = new Buffer(ctx.cookies.get('userInfo'),'base64').toString();
 
     // 获取cookie
     console.log( ctx.cookies.get('userInfo'))
