@@ -29,7 +29,7 @@ const CONFIG = {
   rolling: false,  // 每次访问都更新session
   renew: false,  // 每次反问快要到时间的时候 再设置
 };
-
+// 做负载均衡 需要把session 保存在数据库中   查资料
 app.use(session(CONFIG, app));
 
 

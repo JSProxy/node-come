@@ -30,7 +30,6 @@ const TestSchema = mongoose.Schema({
             }else{
                 if(params.indexOf('http://')!=0 && params)
                 {
-
                 return 'http://'+params;
                 }else{
                     return params;
