@@ -10,12 +10,9 @@ var Koa=require('koa'),
 
 //实例化
 var app=new Koa();
-
 //配置post提交数据的中间件
 app.use(bodyParser());
-
 //配置session的中间件
-
 app.keys = ['some secret hurr'];
 const CONFIG = {
     key: 'koa:sess',
